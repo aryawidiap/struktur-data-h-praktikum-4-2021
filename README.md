@@ -125,7 +125,7 @@ Lanjut ke vertex yang ditunjuk oleh vertex 2  (1).
 
 ![rsk4](img/si_rsk4.JPG)
 
-Lanjut ke vertex yang ditunjuk oleh vertex 1 (0). Karena menurut informasi dari 
+Lanjut ke vertex yang ditunjuk oleh vertex 1 (0). Karena menurut informasi dari `recStack` 0 sudah dikunjungi, kembalikan nilai true. Dengan demikian, fungsi main mengeluarkan `Ada Cycle!`.
 
 Output:
 
