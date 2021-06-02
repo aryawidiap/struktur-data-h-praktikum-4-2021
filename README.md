@@ -16,42 +16,51 @@ Terdapat V rumah, dengan E jalan yang menghubungkannya, dan Q vaksin yang akan d
 
 ### Penjelasan Solusi
 
-p
+Solusi untuk permasalahan ini menggunakan graf yang direpresentasikan dengan adjacency list. Kemudian, jalan dengan waktu tempuh tercepat dari rumah pertama ke rumah selanjutnya dicari dengan algoritma Dijkstra. Implementasi algoritma Dijkstra yang digunakan dapat mengembalikan waktu tempuh tersingkat antara satu rumah dengan rumah yang lainnya, sehingga untuk mencari total waktu minimum yang dibutuhkan untuk mencapai semua rumah yang akan diantarkan vaksin adalah penjumlahan dari waktu tempuh tersingkat antara rumah.
 
 ### Visualisasi Solusi
 
-Untuk mempermudah visualisasi solusi dari permasalahan Nadut Belajar, digunakan sample input berikut:
+Untuk mempermudah visualisasi solusi dari permasalahan Distribusi Vaksin, digunakan sample input berikut:
 
 ```c
-6 1
-7 10 21 45 30 29
-7
+5 6 5
+1 2 6
+1 4 12
+3 2 8
+3 4 4
+3 5 10
+5 4 16
+1
+5
+2
+4
+3
 ```
 
-![nb1](img/si_nb1.JPG)
+![dv1](img/si_dv1.JPG)
 
 Semua pointer start di root.
 
-![nb2](img/si_nb2.JPG)
+![dv2](img/si_dv2.JPG)
 
 Karena data dari node yang ditunjuk p3 lebih besar dari value, geser p3 ke kiri node. depth + 1.
 
-![nb3](img/si_nb3.JPG)
+![dv3](img/si_dv3.JPG)
 
 `p3` belum menunjuk node yang sesuai dan depth > 1, p2 pindah ke p3.
 
-![nb4](img/si_nb4.JPG)
+![dv4](img/si_dv4.JPG)
 
 Karena data dari node yang ditunjuk p3 lebih besar dari value, geser p3 ke kiri node.
 
-![nb5a](img/si_nb5.JPG)
+![dv5](img/si_dv5.JPG)
 
 Node yang ditunjuk p3 memiliki nilai yang dicari, sehingga cetak selisih dari anak-anak node yang ditunjuk p1.
 
 Output:
 
 ```c
-20
+58
 ```
 
 ## Roy Sang Kurir
@@ -79,147 +88,34 @@ Dalam fungsi main, pertama diambil N. Kemudian, dibuat graph dengan vertex seban
 Untuk mempermudah visualisasi solusi dari permasalahan Bucyn, digunakan sample input berikut:
 
 ```c
-7
-Taro 100
-Taro 74
-Cari 100
-Taro 152
-Taro 21
-Taro 33
-Cari 100
+5
+1 0
+0 2
+2 1
+0 3
+3 4
 ```
 
-![bc1](img/si_bc1.JPG)
+![rsk1](img/si_rsk1.JPG)
 
 Masukkan 100 dan 74 (command `Taro`)
 
-![bc2](img/si_bc2.JPG)
+![rsk2](img/si_rsk2.JPG)
 
 Mencari nilai tumpukan 100. Karena inorder, dari root ke node kiri terlebih dahulu.
 
-![bc3](img/si_bc3.JPG)
+![rsk3](img/si_rsk3.JPG)
 
 Nilai node tidak sesuai dengan yang diminta, sehingga *count + 1. Kanan node tidak ada, kembali ke parent node.
 
-![bc4](img/si_bc4.JPG)
+![rsk4](img/si_rsk4.JPG)
 
 Nilai node merupakan yang diinginkan. return, dan program main mencetak `Kasetnya ada di tumpukan ke - 2`
 
-![bc5](img/si_bc5.JPG)
-
-Masukkan 152, 21, dan 33 (command `Taro`)
-
-![bc6](img/si_bc6.JPG)
-
-Cari 100. Telusur ke kiri dahulu.
-
-![bc7](img/si_bc7.JPG)
-
-Telusur ke kiri lagi.
-
-![bc8](img/si_bc8.JPG)
-
-Nilai node tidak sesuai dengan yang diminta, sehingga *count + 1. Kanan node tidak ada, kembali ke parent node.
-
-![bc9](img/si_bc9.JPG)
-
-Nilai node tidak sesuai dengan yang diminta, sehingga *count + 1. Lanjut ke kanan node.
-
-![bc10](img/si_bc10.JPG)
-
-Nilai node tidak sesuai dengan yang diminta, sehingga *count + 1. Kanan node tidak ada, kembali ke parent dari parent node.
-
-![bc11](img/si_bc11.JPG)
-
-Nilai node merupakan yang diinginkan. return, dan program main mencetak `Kasetnya ada di tumpukan ke - 4`
-
 Output:
 
 ```c
-Kasetnya ada di tumpukan ke - 2
-Kasetnya ada di tumpukan ke - 4
-```
-
-
-
-### Verdict
-
-WA
-
-#### Bukti
-
-![verdict_cr](img/verdict_cr.jpg)
-
-### Penjelasan Soal
-
-j
-
-### Penjelasan Solusi
-
-j
-
-### Visualisasi Solusi
-
-Untuk mempermudah visualisasi solusi dari permasalahan Part Time, digunakan sample input berikut:
-
-```c
-5 5
-1 13000
-2 5500
-3 8750
-4 21900
-5 30000
-4 4
-2 3
-2 1
-1 7
-3 2
-```
-
-![pt1](img/si_pt1.JPG)
-
-Modifikasi node untuk menyimpan harga.
-
-![pt2](img/si_pt2.JPG)
-
-Masukkan semua input ke dalam tree.
-
-Y = 4, Cari 4. Hasilnya true sehingga lanjutkan operasi dalam loop.
-
-![pt3](img/si_pt3.JPG)
-
-Ambil node yang memiliki ID = 4 dengan fungsi `_search`, simpan pada pointer p.
-
-![pt4](img/si_pt4.JPG)
-
-Lalu, kalikan p->price dengan X, lalu tambahkan ke Z.
-
-![pt5](img/si_pt5.JPG)
-![pt6](img/si_pt6.JPG)
-![pt7](img/si_pt7.JPG)
-![pt8](img/si_pt8.JPG)
-![pt9](img/si_pt9.JPG)
-![pt10](img/si_pt10.JPG)
-
-Untuk dua input selanjutnya, sama seperti input di atas karena IDnya ada.
-
-![pt11](img/si_pt11.JPG)
-
-Y = 7. Karena tidak ada barang dengan ID 7, keluarkan `Maaf barang tidak tersedia`
-
-![pt12](img/si_pt12.JPG)
-![pt13](img/si_pt13.JPG)
-![pt14](img/si_pt14.JPG)
-
-Y = 2. Barang dengan ID 2 ada, sehingga harganya ditambahkan ke Z
-
-Terakhir, cetak Z.
-
-Output:
-
-```c
-Maaf barang tidak tersedia
-147600
+Ada Cycle!
 ```
 
 ## Sayonara
@@ -249,47 +145,32 @@ Arah pergerakan maksimal dalam satu arah mengikuti pola 1, 1, 2, 2, 3, 3. (1U, 1
 Untuk mempermudah visualisasi solusi dari permasalahan Kata-Kata, digunakan sample input berikut:
 
 ```c
-3
-soalnya
-mudah
-dipahami
-3
-dan
-soalnya
-singkat
+2
+8 14
+3 5
 ```
 
-![kk1](img/si_kk1.JPG)
+![s1](img/si_s1.JPG)
 
 Hasil input data pada trie.
 
-![kk2a](img/si_kk2a.JPG)
+![s2](img/si_s2.JPG)
 
 Mencari "dan", dimulai dari node root.
 
-![kk2b](img/si_kk2b.JPG)
+![s3](img/si_s3.JPG)
 
 Cek apakah node root punya child node untuk karakter 'd'. Karena ada, lanjut cek ke karakter berikutnya.
 
-![kk2c](img/si_kk2c.JPG)
+![s4](img/si_s4.JPG)
 
 Cek apakah node 'd' punya child node untuk karakter 'a'. Karena tidak ada, hentikan pencarian dan return false. Karena fungsi main menerima false, print `0`.
 
-![kk3](img/si_kk3.gif)
+![s5](img/si_s5.JPG)
 
 Mencari "soalnya". Tiap karakter dalam kata "soalnya" ditemukan dalam rangkaian node. Terakhir, karakter 'a' merupakan karakter terakhir dari "soalnya" sehingga cek isEndOfWord pada node yang menyimpan karakter 'a'. Karena nilainya true, fungsi search akan mengembalikan nilai true ke fungsi main dan di print `1` melalui fungsi main.
 
-![kk4a](img/si_kk4a.JPG)
-![kk4b](img/si_kk4b.JPG)
-![kk4c](img/si_kk4c.JPG)
-
-Mencari "singkat". Mirip dengan pencarian "dan", pencarian berhenti di karakter kedua ('i') karena tidak terdapat node children yang melambangkan karakter tersebut. Dengan demikian, dikembalikan nilai false dan fungsi main melakukan print `0`.
-
-Output:
-
 ```c
-0
-1
-0
+1U -> 3T -> 2S
+1S -> 1B
 ```
-
