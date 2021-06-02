@@ -193,7 +193,7 @@ Menghitung dari titik 0. i akan bertambah 1 tiap 2 kali perulangan.
 Mulai saat j (penunjuk lokasi pion sekarang) mencapai 3, masukkan karakter yang diambil dari array ke dalam queue. Hentikan semua loop saat j mencapai 5.
 Lalu, keluarkan isi queue, dengan menghitung huruf-huruf yang sama. Dalam contoh ini, dikeluarkan `1S -> 1B`
 
-```c
+```
 1U -> 3T -> 2S
 1S -> 1B
 ```
